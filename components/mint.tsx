@@ -13,7 +13,7 @@ const Mint: React.FC = () => {
 
     const [mintAmount, setMintAmount] = useState(100);
     const [redeemAmount, setRedeemAmount] = useState(0);
-    const [mintingState, setMintingState] = useState("init" || "approved");
+    const [mintingState, setMintingState] = useState ("init" || "approved">("init")) ;
     const [isMinting, setIsMinting] = useState(false);
     const [isRedeeming, setIsRedeeming] = useState(false);
 
