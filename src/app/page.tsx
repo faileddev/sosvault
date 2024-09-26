@@ -21,45 +21,52 @@ export default function Home() {
       <div
       style={{
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
         padding: "20px",
       }}
       >
-        
-        <div style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              padding: "10px",
-              minWidth: "50%"
-              
-              
-          
-        }}>
-          <Image style={{height: "50px", width: "100px"}}
-              src={Logo}
-              alt='logo'/>
+        <div>
           <div style={{
             display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center"
+            
+          }}>
+            <Image style={{height: "50px", width: "100px"}}
+                  src={Logo}
+                  alt='logo'/>
+              <div style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}>
+          </div>
+          
+          <div style={{
+                display: "flex",
+                flexDirection: "row",
+                padding: "10px",
+          
           }}>
           
-            <Login />
-            <button
-            style={{
-              margin: "5px",
-                      padding: "10px",
-                      background: "0",
-                      border: "solid",
-                      borderRadius: "6px",
-                      color: "#FFFFFF",
-                      fontSize: "1rem",
-                      cursor: "pointer",}}
-                      onClick={() => setOpenMenu(true)
           
-            }>Menu</button>
+              <Login />
+              <button
+              style={{
+                margin: "5px",
+                        padding: "10px",
+                        background: "0",
+                        border: "solid",
+                        borderRadius: "6px",
+                        color: "#FFFFFF",
+                        fontSize: "1rem",
+                        cursor: "pointer",}}
+                        onClick={() => setOpenMenu(true)
+          
+              }>Menu</button>
+          </div>
         </div>
 
 {openMenu && (
