@@ -3,13 +3,13 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThirdwebProvider } from "./thirdweb";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+const montserrat = localFont({
+  src: "./fonts/Montserrat-Medium.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+const montserratMono = localFont({
+  src: "./fonts/Montserrat-Regular.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${montserrat.variable} ${montserratMono.variable}`}>
       <ThirdwebProvider>
         {children}
       </ThirdwebProvider>
