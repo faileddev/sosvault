@@ -9,6 +9,9 @@ const Userinfo: React.FC = () => {
    
     const account = useActiveAccount();
 
+    const vaultContract = "0x56bB3b9885ea2e240F6fa36C8d211E91aD83FF3B";
+
+
     const { data: vaultTotalSupply, isLoading: loadingVaultTotalSupply} = useReadContract ({
         contract: SVCONTRACT,
         method: "totalSupply"
@@ -26,6 +29,19 @@ const Userinfo: React.FC = () => {
             }
        
     });
+
+    const { data: vaultReserve, isLoading: loadingVaultReserve} = useReadContract (
+        balanceOf,
+        {
+            contract: TCONTRACT,
+            address: vaultContract,
+            queryOptions: {
+                enabled: !!account
+            }
+       
+    });
+
+
 
     const { 
         data: totalDeposit, 
@@ -117,8 +133,64 @@ const Userinfo: React.FC = () => {
                   marginTop: "20px",
                 }}
                   >
+                    <p>Vault Reserve</p>
+                    {loadingVaultTotalSupply ? (
+                
+                <p>...</p>
+            
+                
+            ) : (
+                
+                <h3>{truncate(toEther(vaultTotalSupply!),2)}<span style={{fontSize: "8px"}}>DAI</span></h3>
+                
+            )}
+                    
+                </div>
+
+                <div style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "20px",
+                  textAlign:"center",
+                  borderRadius: "10px",
+                  borderColor: "gray",
+                  border: "solid",
+                  marginTop: "20px",
+                }}
+                  >
                     <p>Exchange Rate</p>
                     <h3>1:1</h3>
+                    
+                </div>
+
+                <div style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "20px",
+                  textAlign:"center",
+                  borderRadius: "10px",
+                  borderColor: "gray",
+                  border: "solid",
+                  marginTop: "20px",
+                }}
+                  >
+                    <p>Mint Fee</p>
+                    <h3>4-5%<span style={{fontSize: "8px"}}>(500bp)</span></h3>
+                    
+                </div>
+                <div style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "20px",
+                  textAlign:"center",
+                  borderRadius: "10px",
+                  borderColor: "gray",
+                  border: "solid",
+                  marginTop: "20px",
+                }}
+                  >
+                    <p>Redeem Fee</p>
+                    <h3>14-15%<span style={{fontSize: "8px"}}>(1500bp)</span></h3>
                     
                 </div>
             </div>

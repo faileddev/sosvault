@@ -23,51 +23,57 @@ export default function Home() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
         padding: "20px",
       }}
       >
-        <div>
+       
+            
+            
           <div style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
+            maxWidth: "100%",
+            
+            
             
           }}>
             <Image style={{height: "50px", width: "100px"}}
                   src={Logo}
                   alt='logo'/>
-              <div style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}>
-          </div>
+              
           
           <div style={{
                 display: "flex",
                 flexDirection: "row",
                 padding: "10px",
+                justifyContent: "space-between",
+                minWidth: "100%",
+                
           
           }}>
           
           
-              <Login />
-              <button
-              style={{
-                margin: "5px",
-                        padding: "10px",
-                        background: "0",
-                        border: "solid",
-                        borderRadius: "6px",
-                        color: "#FFFFFF",
-                        fontSize: "1rem",
-                        cursor: "pointer",}}
-                        onClick={() => setOpenMenu(true)
-          
-              }>Menu</button>
+              <div style={{ margin: "5px"}}>
+                <Login />
+              </div>
+              <div>
+                <button
+                style={{
+                  margin: "5px",
+                          padding: "13px",
+                          background: "0",
+                          border: "solid",
+                          borderRadius: "6px",
+                          color: "#FFFFFF",
+                          fontSize: "1rem",
+                          cursor: "pointer",}}
+                          onClick={() => setOpenMenu(true)
+                }>Menu</button>
+              </div>
           </div>
-        </div>
+       
 
 {openMenu && (
                     <div 
@@ -140,7 +146,8 @@ export default function Home() {
           flexDirection: "row",
           justifyContent: "center",
           padding: "20px",
-          height: "100vh",
+          height: "100%",
+          marginBottom: "40px"
         }}>
       
       
@@ -165,6 +172,8 @@ export default function Home() {
               sUSD is a decentralised, scalable and overcollateralized stablecoin that is 1:1 USD pegged. Anyone can mint sUSD using their DAI token and also stake their sUSD tokens to receive rewards.
                     </p>
             </div>
+
+            
       
             <div style={{
               marginTop: "10px",
@@ -174,10 +183,11 @@ export default function Home() {
               
             </div>
       
-            <div>
-            <div style={{
+      <div>
+          <div style={{
             display: "flex",
             flexDirection: "column",
+            
             
             
             
