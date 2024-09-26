@@ -22,37 +22,45 @@ export default function Home() {
       style={{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        justifyContent: "center",
         padding: "20px",
       }}
       >
         
-        <Image 
-            src={Logo}
-            alt='logo'/>
-
         <div style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-        }}>
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              padding: "10px",
+              minWidth: "50%"
+              
+              
           
-          <Login />
-          <button
-          style={{
-            margin: "5px",
-                    padding: "10px",
-                    background: "0",
-                    border: "solid",
-                    borderRadius: "6px",
-                    color: "#FFFFFF",
-                    fontSize: "1rem",
-                    cursor: "pointer",}}
-                    onClick={() => setOpenMenu(true)
-
-                      
-          }>Menu</button>
+        }}>
+          <Image style={{height: "50px", width: "100px"}}
+              src={Logo}
+              alt='logo'/>
+          <div style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}>
+          
+            <Login />
+            <button
+            style={{
+              margin: "5px",
+                      padding: "10px",
+                      background: "0",
+                      border: "solid",
+                      borderRadius: "6px",
+                      color: "#FFFFFF",
+                      fontSize: "1rem",
+                      cursor: "pointer",}}
+                      onClick={() => setOpenMenu(true)
+          
+            }>Menu</button>
+        </div>
 
 {openMenu && (
                     <div 
