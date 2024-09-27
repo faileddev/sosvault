@@ -10,6 +10,7 @@ const Userinfo: React.FC = () => {
     const account = useActiveAccount();
 
     const vaultContract = "0x56bB3b9885ea2e240F6fa36C8d211E91aD83FF3B";
+    const treasuryAddress = "0xaCe09eC29819533D23199F72Cea5fE6A2C8F13C2";
 
 
     const { data: vaultTotalSupply, isLoading: loadingVaultTotalSupply} = useReadContract ({
@@ -34,10 +35,8 @@ const Userinfo: React.FC = () => {
         balanceOf,
         {
             contract: TCONTRACT,
-            address: vaultContract,
-            queryOptions: {
-                enabled: !!account
-            }
+            address: treasuryAddress,
+            
        
     });
 
@@ -52,9 +51,7 @@ const Userinfo: React.FC = () => {
         {
             contract: SVCONTRACT,
             method: "totalAssets",
-            queryOptions: {
-                enabled: !!account
-            }
+            
        
     });
 
@@ -122,6 +119,7 @@ const Userinfo: React.FC = () => {
 
                     </div>
 
+                
                 <div style={{
                   display: "flex",
                   flexDirection: "column",
@@ -134,14 +132,14 @@ const Userinfo: React.FC = () => {
                 }}
                   >
                     <p>Vault Reserve</p>
-                    {loadingVaultTotalSupply ? (
+                    {loadingVaultReserve ? (
                 
                 <p>...</p>
             
                 
             ) : (
                 
-                <h3>{truncate(toEther(vaultTotalSupply!),2)}<span style={{fontSize: "8px"}}>DAI</span></h3>
+                <h3>{truncate(toEther(totalDeposit! + vaultReserve!),2)}<span style={{fontSize: "8px"}}>DAI</span></h3>
                 
             )}
                     
