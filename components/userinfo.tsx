@@ -112,7 +112,7 @@ const Userinfo: React.FC = () => {
                 
             ) : (
                 
-                <h3>{truncate(toEther(vaultTotalSupply!),2)}<span style={{fontSize: "8px"}}>sUSD</span></h3>
+                <h3>{truncate(toEther(vaultTotalSupply!),2).toLocaleString()}<span style={{fontSize: "8px"}}>sUSD</span></h3>
                 
             )}
 
@@ -139,7 +139,7 @@ const Userinfo: React.FC = () => {
                 
             ) : (
                 
-                <h3>{truncate(toEther(totalDeposit! + vaultReserve!),2)}<span style={{fontSize: "8px"}}>DAI</span></h3>
+                <h3>{truncate(toEther(totalDeposit! + vaultReserve!),2).toLocaleString()}<span style={{fontSize: "8px"}}>DAI</span></h3>
                 
             )}
                     

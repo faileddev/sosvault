@@ -219,22 +219,13 @@ const Mint: React.FC = () => {
                                 }}>sUSD</span>
                             </h1>
 
-                            <p style={{
-                                marginTop: "20px"
-                            }}>
-                                Mint Fee:
-                            </p>
-                            <h1>
-                                5<span style={{
-                                    fontSize: "10px"
-                                }}>%</span>
-                            </h1>
+                            
                             
                             {mintingState === "init" ? (
                                 <>
                                 <p style={{
-                                    marginTop: "10px"
-                                }}>Deposit</p>
+                                    marginTop: "20px"
+                                }}>Enter Amount Deposit</p>
                                 <input
                                 type="number"
                                 placeholder="100"
@@ -249,9 +240,85 @@ const Mint: React.FC = () => {
                                     height: "40px",
                                     fontSize: "18px"
                                 }}
+
+                                
                                 
                                 
                                 />
+
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            width: "100%",
+                            marginTop: "10px",
+                            justifyContent: "space-between",
+                        }}>
+
+                            
+                        
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "left"
+                            
+                        }} >
+                            <p style={{marginTop: "10px"}}>Mint Fee:</p>
+                            
+                        </div>
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "right"
+                            
+                        }} >
+                            <p style={{marginTop: "10px"}}>10%</p>
+                            
+                        </div>
+                        
+                        </div>
+
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            width: "100%",
+                            justifyContent: "space-between",
+                        }}>
+
+                            
+                        
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "left"
+                            
+                        }} >
+                            <p style={{marginTop: "5px"}}>You receive</p>
+                            
+                        </div>
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "right"
+                            
+                        }} >
+                    <p style={{ marginTop: "5px"}}>{loadingMintPreview ? (
+                    <p>... <span style={{
+                            fontSize: "12px"
+                    }}>sUSD</span></p>
+         ) : (
+                    <p>{truncate(toEther(mintPreview!),2).toLocaleString()} <span style={{
+                    fontSize: "12px"
+                    }}>sUSD</span></p>
+                    )} </p>                            
+                        </div>
+
+                        
+                        
+                        
+                        
+                        </div>
+
+
                                 <TransactionButton
                                 transaction={() => (
                                     approve ({
@@ -268,6 +335,7 @@ const Mint: React.FC = () => {
                                     marginTop: "10px",
                                 }}
                                 >Set Approval</TransactionButton>
+                                
                                 </>
 
                             ) : (
@@ -308,6 +376,13 @@ const Mint: React.FC = () => {
                                 </>
                                 
                             ) } 
+
+
+                        
+
+
+                            
+                            
                             
                             <button style={{
                                 marginTop: "5px",
@@ -380,16 +455,7 @@ const Mint: React.FC = () => {
                                 }}>sUSD</span>
                             </h1>
 
-                            <p style={{
-                                marginTop: "20px"
-                            }}>
-                                Redemption Fee:
-                            </p>
-                            <h1>
-                                15<span style={{
-                                    fontSize: "10px"
-                                }}>%</span>
-                            </h1>
+                            
                             
                             <p style={{ marginTop: "20px"}}>Redeem: </p>
                             <input
@@ -407,16 +473,80 @@ const Mint: React.FC = () => {
                                 fontSize: "18px"
                             }}
                              />
-                             <p style={{ marginTop: "10px"}}>You will receive: </p>
-                             <h1 >{loadingRedeemPreview ? (
-          <h1>...<span style={{
-            fontSize: "12px"
-        }}>sUSD</span></h1>
+                             
+
+
+<div style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            width: "100%",
+                            marginTop: "10px",
+                            justifyContent: "space-between",
+                        }}>
+
+                            
+                        
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "left"
+                            
+                        }} >
+                            <p style={{marginTop: "10px"}}>Redemption Fee:</p>
+                            
+                        </div>
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "right"
+                            
+                        }} >
+                            <p style={{marginTop: "10px"}}>15%</p>
+                            
+                        </div>
+                        
+                        </div>
+
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            width: "100%",
+                            justifyContent: "space-between",
+                        }}>
+
+                            
+                        
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "left"
+                            
+                        }} >
+                            <p style={{marginTop: "5px"}}>You receive</p>
+                            
+                        </div>
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            textAlign: "right"
+                            
+                        }} >
+                    <p style={{ marginTop: "5px"}}>{loadingRedeemPreview ? (
+                    <p>... <span style={{
+                            fontSize: "12px"
+                    }}>sUSD</span></p>
          ) : (
-          <h1>{truncate(toEther(redeemPreview!),2)}<span style={{
-            fontSize: "12px"
-        }}>DAI</span></h1>
-         )} </h1>
+                    <p>{truncate(toEther(redeemPreview!),2).toLocaleString()} <span style={{
+                    fontSize: "12px"
+                    }}>sUSD</span></p>
+                    )} </p>                            
+                        </div>
+
+                        
+                        
+                        
+                        
+                        </div>
                              
                             <TransactionButton style={{marginTop: "10px", width: "100%"}}
                             transaction={() => (
