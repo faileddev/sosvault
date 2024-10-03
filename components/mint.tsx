@@ -534,11 +534,11 @@ const Mint: React.FC = () => {
                     <p style={{ marginTop: "5px"}}>{loadingRedeemPreview ? (
                     <p>... <span style={{
                             fontSize: "12px"
-                    }}>sUSD</span></p>
+                    }}>DAI</span></p>
          ) : (
                     <p>{truncate(toEther(redeemPreview!),2).toLocaleString()} <span style={{
                     fontSize: "12px"
-                    }}>sUSD</span></p>
+                    }}>DAI</span></p>
                     )} </p>                            
                         </div>
 
